@@ -1,0 +1,20 @@
+<app-navigation></app-navigation>
+
+<div class="new">
+  <form [formGroup]="incomeForm" (ngSubmit)="onSubmit(incomeForm.value)" class="my-form">
+
+    <mat-form-field class="full-width">
+      <input formControlName="amount" matInput placeholder="Amount" type="number" class="example-right-align" required>
+      <span matPrefix>$&nbsp;</span>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <textarea formControlName="name" matInput placeholder="Name"></textarea>
+    </mat-form-field>
+
+    <mat-card-actions>
+      <button mat-raised-button type="submit"
+              [disabled]="!incomeForm.valid" color="primary"  class="saveButton">Save</button>
+    </mat-card-actions>
+  </form>
+</div>
